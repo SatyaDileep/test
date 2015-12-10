@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+ 
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/govt_of_india</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">pramati123</property>
+        
+        <!-- JDBC connection pool (use the built-in) -->
+        <property name="connection.pool_size">1</property>
+        
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!-- Disable the second-level cache  -->
+        <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+        
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">false</property>
+
+        <!-- Drop the existing tables and create new one for CREATE -->
+        <!-- Drop the existing tables and create new one for CREATE-DROP if sessionfactory was not closed-->
+        <!-- Drops the schema and data for CREATE-DROP if sessionfactory was closed-->
+        <!-- Drop the existing table but its experimental for UPDATE-->
+        <!-- Validates the existing table but doesn't update for VALIDATE-->
+        <property name="hbm2ddl.auto">update</property> 
+       <!-- Use hbm2ddl.auto only in development envt coz its not encourageable -->
+ 
+        <!-- Mention here all the model classes along with their package name -->
+ 		<mapping class="com.pramati.springrest.model.DocumentDetails"/>
+ 		 
+    </session-factory>
+</hibernate-configuration>
