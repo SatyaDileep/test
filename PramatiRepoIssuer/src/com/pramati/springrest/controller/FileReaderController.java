@@ -34,6 +34,7 @@ public class FileReaderController {
  
         byte[] decodedBytes = Base64.decodeBase64(encodedData);
         System.out.println(decodedBytes);
+        System.out.println("decodedBytes");
         writeByteArraysToFile(target, decodedBytes);
     }
 	
